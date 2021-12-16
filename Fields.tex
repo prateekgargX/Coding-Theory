@@ -1,0 +1,158 @@
+\section{Fields}
+
+\begin{definition}
+    A \textit{field} $(F,+,\cdot)$ is a non-empty set $F$ along with two binary operations $'+'$(called addition) and $'\cdot'$(called multiplication) on $F\times F$ satisfying the following conditions for all $a,b,c \in F$
+    \begin{enumerate}[(i)]
+        \item $F$ is closed under $+$ and $\cdot$
+        \item Associative laws: $(a+b)+c=a+(b+c)$ and $a\cdot(b\cdot c)=(a\cdot b)\cdot c$ 
+        \item Commutative laws: $a+b=b+a$ and $a\cdot b=b\cdot a$ for all $a,b\in F$.
+        \item Distributive law: $a\cdot(b+c)=a\cdot b+a\cdot c$ . 
+        \item $\exists$ elements in $F$, $0$ and $1$, $0 \neq 1$ such that $a+0=a$ and $a\cdot 1=a$.
+        \item For every $a\in F$, there exists an an additive in $F$, denoted $-a$, such that $a+(-a)=0$.
+        \item For every $a\neq 0$ in $F$, there exists a multiplicative element in $F$, denoted $a^{-1}$, such that $aa^{-1}=1$.
+    \end{enumerate}
+\end{definition}
+
+\vspace{2mm}
+
+\begin{exercise}
+    Verify that $\mathbb{R}$, $\mathbb{Q}$ and $\mathbb{C}$ are fields
+\end{exercise}
+\begin{proof}
+
+Defining $'+'$ and $'\cdot'$ as $normal$ addition and multiplication, it is quite trivial that $\mathbb{R}$, $\mathbb{Q}$ and $\mathbb{C}$ satisfy properties $i-vii$. So they are fields.
+\end{proof}
+
+\begin{exercise}
+    If $a,b \in F$ then $a\cdot b=0 \implies a=0 $ or $b=0$ 
+\end{exercise}
+\begin{proof}
+Assume that $a\neq =0$ and $b \neq 0$. By property $vii$ $\exists$ $a^{-1}$  s.t. $a^{-1} \cdot$ 
+$ a=1$. 
+
+\begin{align*}
+    a \cdot b &= 0 \\
+    (a^{-1} \cdot a) \cdot b &=0 \\
+    1 \cdot b &=0 \\
+    b &=0 \\
+\end{align*}
+This contradicts the assumption that $b=0$.
+
+So $a\cdot b=0 \implies a=0 $ or $b=0$ 
+\end{proof}
+
+\begin{definition}
+    A \textit{finite field} is a field with a finite set of elements. The number of elements in a finite field is called its \textit{order}.
+\end{definition}
+\subsection{Modular Operation}
+\begin{definition}
+    Let $a,b$ and $m > 1$, $a,b,m \in \mathbb{Z}$. Then $$a \equiv b(\textrm{mod } m)$$
+    if $m|a-b$ i.e $m$ divides $a-b$
+\end{definition}
+Given integers $a, m > 1$, by division algorithm we have $a = mq + b$ where $b$
+is uniquely determined by $a, m$ and $0 \leq b \leq m-1$. So every $a \in \mathbb{Z}$ is congruent to exactly one of $0, 1, 2, .., m-1$ mod$(m)$.
+
+\begin{exercise}
+    If $a \equiv b(\textrm{mod } m)$ and $c \equiv d(\textrm{mod } m)$ then show that
+    \begin{itemize}
+        \item $a+c \equiv b+d(\textrm{mod } m)$
+        \item $a-c \equiv b-d(\textrm{mod } m)$
+        \item $a\cdot c \equiv b\cdot d(\textrm{mod } m)$
+    \end{itemize}
+\end{exercise}
+\begin{proof}
+    \because \phantom{o} $a \equiv b(\textrm{mod } m) \implies m|a-b$ and $a \equiv b(\textrm{mod } m) \implies m|c-d$, 
+    \begin{align*}
+        m &|(a-b)+(c-d)\\ 
+        m &|(a+c)-(b+d) \\ 
+        a+c &\equiv b+d(\textrm{mod } m)
+    \end{align*}
+    Similarly $a-c \equiv b-d(\textrm{mod } m)$
+    
+    By division algorithm  $a = mq + b$ and  $c = mp + d$ $$a \cdot c = (mq+b)\cdot(mp+d)$$
+    $$a \cdot c = m^{2}pq+m(pb+qd)+bd$$ $$ \cdot c = m(mpq+pb+qd)+bd$$ $$m| 
+    ac-bd$$ $$a\cdot c \equiv b\cdot d(\textrm{mod } m)$$
+    Hence proved.
+\end{proof}
+
+\begin{exercise}
+    Let $p$ be a prime.
+    \begin{itemize}
+        \item Show that $ \binom{p}{j} \equiv 1 (\textrm{mod } m)$ for any $j$ s.t. $1 \leq j \leq p-1$
+        \item Show that $ \binom{p-1}{j} \equiv (-1)^{j} (\textrm{mod } m)$ for any $j$ s.t. $1 \leq j \leq p-1$
+    \end{itemize}
+\end{exercise}
+
+\subsection{Finite Fields}
+\begin{definition}
+    For $m>1$, we define $Z_{m}={0,1,2..,m-1}$. $+$ and $\cdot$ are defined as 
+    $$a+b=(a+b)(\textrm{mod } m)$$ $$a\cdot b=(ab)(\textrm{mod } m)$$ 
+\end{definition}
+
+\begin{exercise}
+    Prove that $Z_{m}$ is a field iff $m$ is prime.
+\end{exercise}
+\begin{proof}
+    p
+\end{proof}
+
+\begin{theorem}
+    For $n\in\mathbb{N}$, consider the set $\mathbb{Z}_n$ with addition and multiplication defined modulo $n$, that is, $\overline{a}+\overline{b}=\overline{a+b}$ and $\overline{a}\cdot\overline{b}=\overline{ab}$ for $\overline{a}, \overline{b}\in\mathbb{Z}_n$. $\mathbb{Z}_n$ is a field if and only if $n$ is a prime.
+\end{theorem}
+\begin{proof}
+If $n$ is not a prime, then there exist $a,b\in\mathbb{N}$ both less than $n$ such that $ab=n$, that is, $\overline{a}\cdot\overline{b}=\overline{0}$. As the group $\mathbb{Z}_n$ under addition has identity $\overline{0}$, we see that $\mathbb{Z}_n$ cannot be a field by \ref{multiplyByZero}.
+
+For prime $n$, $\mathbb{Z}_n$ is a field as for any $a\not\in \overline{0}$, $(a,n)=1$ and thus a modular multiplicative inverse exists for every element of $\mathbb{Z}_n\setminus\{0\}$ (Recall \ref{BezoutsLemma}).
+\end{proof}
+
+This field, called the \textit{prime field} of order $n$, is denoted $\mathbb{F}_n$.
+
+\vspace{2mm}
+Let $F$ be a field. For $a\in F, n\in\mathbb{N}$, we denote $a+a+\cdots+a$ ($n$ times) as $na$ and $aa\cdots a$ ($n$ times) as $a^n$.
+
+\subsection{Characteristic of a Field}
+
+\begin{definition}
+    Let $F$ be a field. The smallest positive integer $n$ such that $n1=0$ is called the \textit{characteristic} of $F$ and is denoted $\charac F$. If no such $n$ exists, we say that $F$ has characteristic $0$.
+\end{definition}
+
+Note that if $\charac F=n$, then $na=0$ for all $a\in F$ ($na=n(1a)=(n1)a=0$).
+
+\begin{theorem}
+    Let $F$ be a finite field. Then $\charac F$ is prime.
+\end{theorem}
+\begin{proof}
+    On the contrary, assume that $n=\charac F$ is composite, that is, $n=ab$ for some $a,b\in\mathbb{N}$, $a,b>1$. We have $n1=0$, that is, $(a1)(b1)=0$. Then \ref{multiplyByZero} implies that $a1=0$ or $b1=0$. As $a,b<n$ and $n$ is the smallest positive integer such that $n1=0$, this is a contradiction. Thus, $n$ must be prime.
+\end{proof}
+
+\begin{theorem}
+    Let $F$ be a finite field. Then the order of $F$ is equal to $p^n$ for some prime $p$ and $n\in\mathbb{N}$.
+\end{theorem}
+\begin{proof}
+    Let $\charac F=p$. Then since $1$ has order $p$ in the group $(F,+)$, $p$ divides the order of $F$.
+    
+    \vspace{1mm}
+    Let $q\neq p$ be another prime dividing the order of $F$. By \ref{CauchyTheorem}, there exists an element of order $q$ in $(F,+)$, that is, there is some non-zero $a$ such that $qa=0$. We also have $pa=0$ because $p = \charac F$. As $p$ and $q$ are distinct primes, $(p,q)=1$.
+    
+    \vspace{1mm}
+    By \ref{BezoutsLemma}, there exist $m,n\in\mathbb{Z}$ such that $mp+nq=1$. We then have $mp(a)+nq(a)=1(a)$ which implies $0=m(pa)+n(qa)=a$. This is a contradiction.
+    
+    \vspace{1mm}
+    Thus, $p$ is the only prime that divides the order of $F$.
+\end{proof}
+
+\begin{definition}
+    Fields $F$ and $G$ are \textit{isomorphic} if there is a bijection $\varphi:F\to G$ such that $\varphi(x+y)=\varphi(x)+\varphi(y)$ and $\varphi(xy)=\varphi(x)\varphi(y)$ for all $x,y\in F$. Such a map is called an \textit{isomorphism}.
+\end{definition}
+
+\begin{theorem}
+    Given any prime power $q$, there exists a unique field of order $q$ (up to isomorphism).
+\end{theorem}
+
+We omit the proof of the above theorem.
+
+\vspace{2mm}
+Given the above, we unambiguously denote the field of order $q$ as $\mathbb{F}_q$.
+
+
+\clearpage

@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\title{Winter of Puzzles: Coding Theory}
+\author{Prateek Garg}
+\date{December '21}
+
+\usepackage{xcolor}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{mathrsfs, bbm}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks]{hyperref}
+\usepackage{tikz, pgfplots}
+\pgfplotsset{width=7cm, compat=1.9}
+\usetikzlibrary{arrows, positioning}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\sffamily\Large\filcenter\bfseries}{\S\thesection.}{0.25cm}{\Large}
+\titleformat{\subsection}[block]{\large\bfseries\sffamily}{\S\S\thesubsection.}{0.2cm}{\large}
+
+\usepackage{fancyhdr}
+\lhead{\normalsize\sffamily{Coding Theory}}
+\chead{\sffamily{\thepage}}
+\rhead{\sffamily{Prateek Garg}}
+\cfoot{}
+\pagestyle{fancy}
+
+\setlength\parindent{0pt}
+
+\setcounter{section}{0}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\numberwithin{equation}{section}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+\numberwithin{definition}{section}
+\numberwithin{theorem}{section}
+\newtheorem*{example}{Example}
+\newtheorem{exercise}{Exercise}
+\numberwithin{exercise}{section}
+
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\dmid}{\mathrel{\|}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\charac}{\operatorname{char}}
+\newcommand{\syn}{\operatorname{S}}
+\newcommand{\dom}{\mathbb{D}}
+\newcommand{\expec}{\mathbb{E}}
+\newcommand{\unif}{\mathscr{U}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\BSC}{\mathsf{BSC}}
+\newcommand{\SC}{\mathsf{SC}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\tableofcontents
+\clearpage
+
+\input{Fields}
+\input{Intro}
+\input{LinearCodes}
+
+\bibliographystyle{plain}   
+\bibliography{references}
+
+\end{document}
